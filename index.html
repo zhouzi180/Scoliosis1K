@@ -6,8 +6,8 @@
         content="Deformable Neural Radiance Fields creates free-viewpoint portraits (nerfies) from casually captured videos.">
   <meta name="keywords" content="Gait, LiDAR, Point cloud">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Gait Patterns as Biomarkers: A Video-Based Approach for Classifying Scoliosis</title>
-
+  <title>Scoliosis1K: A Large-Scale Dataset for Video-Based Scoliosis Screening</title>
+  
   <!-- Global site tag (gtag.js) - Google Analytics -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-PYVRSFMDRL"></script>
   <script>
@@ -69,15 +69,6 @@
         <a class="navbar-item" href="https://lidargait.github.io/">
           LidarGait
         </a>
-           <!-- <a class="navbar-item" href="https://nerfies.github.io">
-            Nerfies
-          </a>
-          <a class="navbar-item" href="https://latentfusion.github.io">
-            LatentFusion
-          </a>
-          <a class="navbar-item" href="https://photoshape.github.io">
-            PhotoShape
-          </a> -->
         </div>
       </div>
     </div>
@@ -91,384 +82,209 @@
     <div class="container is-max-desktop">
       <div class="columns is-centered">
         <div class="column has-text-centered">
-          <h1 class="title is-1 publication-title">Gait Patterns as Biomarkers: A Video-Based Approach for Classifying Scoliosis</h1>
+          <h1 class="title is-1 publication-title">Scoliosis1K: A Large-Scale Dataset for Video-Based Scoliosis Screening</h1>
           <div class="is-size-5 publication-authors">
             <span class="author-block">
-              <a href="https://zhouzi180.github.io">Zirui Zhou</a>*<sup>1</sup>,</span>
+              <a href="https://zhouzi180.github.io">Zirui Zhou</a><sup>1</sup>,</span>
             <span class="author-block">
-              <a >Junhao Liang</a>*<sup>1</sup>,</span>
+              <a >Junhao Liang</a><sup>1</sup>,</span>
             <span class="author-block">
-              <a >Zizhao Peng</a><sup>1,2</sup>,</span>
+              <a >Zizhao Peng</a><sup>1</sup>,</span>
+              <span class="author-block">
+                <a href="https://scholar.google.com.hk/citations?user=1xA5KxAAAAAJ&hl=zh-CN">Dongyang Jin</a><sup>1</sup>,</span>
             <span class="author-block">
-              <a href="https://chaofan996.github.io">Chao Fan</a><sup>1</sup>,</span>
+              <a href="https://chaofan996.github.io">Chao Fan</a><sup>2</sup>,</span>
             <span class="author-block">
               <a href="https://faculty.sustech.edu.cn/anfw/en/">Fengwei An</a><sup>1</sup>,</span>
             <span class="author-block">
-              <a href="https://www.sustech.edu.cn/en/faculties/yushiqi.html">Shiqi Yu</a><sup>1</sup>,</span>
-              <!-- <span class="author-block">
-              <a href="https://utkarshsinha.com">Utkarsh Sinha</a><sup>2</sup>,</span>
-            <span class="author-block">
-              <a href="https://jonbarron.info">Jonathan T. Barron</a><sup>2</sup>,
+              <a href="https://www.sustech.edu.cn/en/faculties/yushiqi.html">Shiqi Yu</a><sup>1</sup>
             </span>
-            <span class="author-block">
-              <a href="http://sofienbouaziz.com">Sofien Bouaziz</a><sup>2</sup>,
-            </span>
-            <span class="author-block">
-              <a href="https://www.danbgoldman.com">Dan B Goldman</a><sup>2</sup>,
-            </span>
-            <span class="author-block">
-              <a href="https://homes.cs.washington.edu/~seitz/">Steven M. Seitz</a><sup>1,2</sup>,
-            </span>
-            <span class="author-block">
-              <a href="http://www.ricardomartinbrualla.com">Ricardo Martin-Brualla</a><sup>2</sup>
-            </span> -->
           </div>
 
           <div class="is-size-5 publication-authors">
             <span class="author-block"><sup>1</sup>Southern University of Science and Technology,</span>
-            <span class="author-block"><sup>2</sup>The Hong Kong Polytechnic University</span>
-            
+            <span class="author-block"><sup>2</sup>Shenzhen University</span>
           </div>
           
-          <center>
-            <span style="font-size:22px"><a href="https://github.com/ShiqiYu/OpenGait/tree/master">Code</a></span>    
+          <!-- <center>
             <span style="font-size:22px"><a href="#download-section">Dataset</a></span>    
-            <span style="font-size:22px"><a href="https://arxiv.org/abs/2407.05726">Arxiv</a> </span>    
-            <!-- <span style="font-size:22px"><a href="files/ICCV21_HDR_supplementary.pdf">Supplementary [PDF]</a> </span>      -->
-            <!--<span style="font-size:22px"><a href="https://drive.google.com/file/d/1OsqVlRwSiHjkU1tTlt2aQ5fz3q25ZsJy/view?usp=sharing">Supplementary [PDF]</a> </span>  &emsp; &emsp;-->
-            <!-- <span style="font-size:22px"><a href="https://github.com/guanyingc/DeepHDRVideo_Poster_LaTex/blob/master/poster_landscape.pdf">Poster</a> </span>      -->
-          </center>
+            <span style="font-size:22px"><a href="#code-section">Code</a></span>    
+            <span style="font-size:22px"><a href="#paper-section">Paper</a> </span>    
+          </center> -->
 
         </div>
       </div>
     </div>
   </div>
+</section>
 
-
-<!-- <section class="hero teaser">
+<section>
   <div class="container is-max-desktop">
-    <div class="hero-body">
-      <video id="teaser" autoplay muted loop playsinline height="100%">
-        <source src="./static/videos/pc.mov"
-                type="video/mp4">
-      </video>
-      <h2 class="subtitle has-text-centered">
-        <span class="dnerf">SUSTech1K</span> and <span class="dnerf">LidarGait</span> endow 3D information for gait recognition in the real world.
-      </h2>
-    </div>
-  </div> -->
-<!-- 
-
-  <h3 class="title is-4">Download</h3>
-  <div class="content has-text-justified">
-    <p>All users can obtain and use this dataset and only after signing the
-      <a href="./static/resources/SUSTech1KAgreement.pdf" target="_blabk" style="color: #09f;">Agreement</a>
-      and sending it to the official contact email address (shencf2019@mail.sustech.edu.cn)</p>
-    <p>Before obtain the password for dataset, feel free to download first via link: (<a href="https://connecthkuhk-my.sharepoint.com/:f:/g/personal/noahshen_connect_hku_hk/EgDfZ-oO2hlHrtuctisJZYsBls_dKJcglBeETVGwSdLAug?e=AUcZcq" target="_blabk" style="color: #09f;">OneDrive</a>, <a href="https://pan.baidu.com/s/1Y5_50YD1zDZuRsFNEu4qlg?pwd=4zbf" target="_blabk" style="color: #09f;">BaiduYun</a>)</p>
-  </div> -->
-
-
-
-
-<!-- <section class="hero is-light is-small">
-  <div class="hero-body">
-    <div class="container">
-      <div id="results-carousel" class="carousel results-carousel">
-        <div class="item item-steve">
-          <video poster="" id="steve" autoplay controls muted loop playsinline height="100%">
-            <source src="./static/videos/steve.mp4"
-                    type="video/mp4">
-          </video>
-        </div>
-        <div class="item item-chair-tp">
-          <video poster="" id="chair-tp" autoplay controls muted loop playsinline height="100%">
-            <source src="./static/videos/chair-tp.mp4"
-                    type="video/mp4">
-          </video>
-        </div>
-        <div class="item item-shiba">
-          <video poster="" id="shiba" autoplay controls muted loop playsinline height="100%">
-            <source src="./static/videos/shiba.mp4"
-                    type="video/mp4">
-          </video>
-        </div>
-        <div class="item item-fullbody">
-          <video poster="" id="fullbody" autoplay controls muted loop playsinline height="100%">
-            <source src="./static/videos/fullbody.mp4"
-                    type="video/mp4">
-          </video>
-        </div>
-        <div class="item item-blueshirt">
-          <video poster="" id="blueshirt" autoplay controls muted loop playsinline height="100%">
-            <source src="./static/videos/blueshirt.mp4"
-                    type="video/mp4">
-          </video>
-        </div>
-        <div class="item item-mask">
-          <video poster="" id="mask" autoplay controls muted loop playsinline height="100%">
-            <source src="./static/videos/mask.mp4"
-                    type="video/mp4">
-          </video>
-        </div>
-        <div class="item item-coffee">
-          <video poster="" id="coffee" autoplay controls muted loop playsinline height="100%">
-            <source src="./static/videos/coffee.mp4"
-                    type="video/mp4">
-          </video>
-        </div>
-        <div class="item item-toby">
-          <video poster="" id="toby" autoplay controls muted loop playsinline height="100%">
-            <source src="./static/videos/toby2.mp4"
-                    type="video/mp4">
-          </video>
-        </div>
-      </div>
-    </div>
-  </div>
-</section> -->
-
-
-  <div class="container is-max-desktop">
-    <!-- Abstract. -->
     <div class="columns is-centered">
       <div class="column is-full-width">
-
-        <h2 class="title is-3">Abstract</h2>
+        <h2 class="title is-3">News</h2>
         <div class="content has-text-justified">
-          <p>
-            Scoliosis presents significant diagnostic challenges, particularly in adolescents, where early detection is crucial for effective treatment. Traditional diagnostic and follow-up methods, which rely on physical examinations and radiography, face limitations due to the need for clinical expertise and the risk of radiation exposure, thus restricting their use for widespread early screening. In response, we introduce a novel video-based, non-invasive method for scoliosis classification using gait analysis, effectively circumventing these limitations. This study presents Scoliosis1K, the first large-scale dataset specifically designed for video-based scoliosis classification, encompassing over one thousand adolescents. Leveraging this dataset, we developed ScoNet, an initial model that faced challenges in handling the complexities of real-world data. This led to the development of ScoNet-MT, an enhanced model incorporating multi-task learning, which demonstrates promising diagnostic accuracy for practical applications. Our findings demonstrate that gait can serve as a non-invasive biomarker for scoliosis, revolutionizing screening practices through deep learning and setting a precedent for non-invasive diagnostic methodologies.        </p>
+          <ul>
+            <li>
+              <b>[June. 2025]</b> The 2D pose data is now available!
+            </li>
+            <li>
+              <b>[June. 2024]</b> The silhouette data is now available!
+            </li>
+          </ul>
+        </div>
       </div>
     </div>
   </div>
-</div>
-    <!--/ Abstract. -->
+</section>
 
-    <!-- Paper video. -->
-    <!-- <div class="columns is-centered has-text-centered">
-      <div class="column is-four-fifths">
-        <h2 class="title is-3">Video</h2>
-        <div class="publication-video">
-          <iframe src="https://www.youtube.com/embed/Z_jKaETR9Rk?rel=0&amp;showinfo=0"
-                  frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
-        </div>
-      </div>
-    </div> -->
-    <!--/ Paper video. -->
-  </div>
-  <hr>
+<hr style="width: 1000px; margin: 24px auto;">
 
+<section>
   <div class="container is-max-desktop">
-
-    <!--/ Matting. -->
-
-    <!-- Animation. -->
     <div class="columns is-centered">
       <div class="column is-full-width">
-        <h2 class="title is-3">The Scoliosis1K Dataset</h2>
-        <!-- <p>
-          Scoliosis1K bridges a vital gap in the availability of high-quality, annotated data for non-invasive scoliosis screening. This contribution not only catalyzes innovation in healthcare technology but also sets the stage for expansive future research in automated scoliosis detection and classification. The dataset paves the way for transformative developments that could significantly impact public health, especially in regions where access to expert radiological assessment is limited.
-        </p> -->
-
-
-
-        <!-- Interpolating. -->
-        <h3 class="title is-4">Silhouettes from the Scoliosis1K Dataset</h3>
+        <h2 class="title is-3">Highlights in Scoliosis1K</h2>
         <div class="content has-text-justified">
-          <!-- <p>
-            (Left) Each participant walks normally (top row), followed by walking with a random variance as shown in the bottom row.
-          </p>
-          <p>
-            (Right) SUSTech1K collects data in point cloud and RGB modality with diverse realistic variances.
-          </p> -->
+          <ul>
+            <li><strong>Large-Scale & Real-World</strong>: <b>1,493</b> walking video sequences (<b>447,000</b> frames) from <b>1,050 adolescents</b> collected in <b>a real-world school-based screening program.</b></li>
+            <li><strong>Expert-Annotated Labels</strong>: Each subject was <b>evaluated on-site</b> by medical professionals and categorized as <b>positive (scoliosis), neutral (borderline), or negative (non-scoliosis)</b> based on standard screening protocols.</li>
+            <li><strong>Privacy-Preserving Representations</strong>: The dataset currently includes <b>silhouette</b> and <b>2D pose</b> representations derived from RGB videos, ensuring participant privacy. Additional representations will be released in the future.
+              <!-- <br>
+              <strong>Important:</strong> The dataset is released for <b>ACADEMIC USE ONLY.</b></li> -->
+          </ul>
         </div>
-        <div class="columns is-vcentered interpolation-panel">
-          <div class="column is-full-width has-text-centered">
-            <img src="./static/images/fig_dataset.png"
-                 class="interpolation-image"
-                 alt="Interpolate start reference image."/>
-            <!-- <p>Start Frame</p> -->
-          </div>
+      </div>
+    </div>
+  </div>
+</section>
 
-        </div>
-        <br/>
-        <!--/ Interpolating. -->
+<hr style="width: 1000px; margin: 24px auto;">
 
-        <!-- Re-rendering. -->
-        <h3 class="title is-4">Statistics of the Scoliosis1K Dataset</h3>
-        <div class="content has-text-justified">
-          <p>
-            <!-- LiDAR modality and RGB modality are represented in blue and yellow, respectively. It shows that SUSTech1K dataset is scalable, multimodal, and diverse for the study of 3D gait recognition. CR, BG, UB, UF, NT, NM, OC, and CL denote attributes of Carrying, Bag, Umbrella, Uniform, Night, Occlusion, and Clothing, respectively.  -->
-        </div>
+<section>
+  <div class="container is-max-desktop">
+    <div class="columns is-centered">
+      <div class="column is-full-width">
+        <h2 class="title is-3">Demographics of Scoliosis1K</h2>
         <div class="content has-text-centered">
           <div class="column is-full-width has-text-centered">
             <img src="./static/images/fig_statistics.png"
                  class="interpolation-image"
                  alt="Interpolate start reference image."/>
-            <!-- <p>Start Frame</p> -->
           </div>
         </div>
-        <!--/ Re-rendering. -->
-
       </div>
     </div>
-    <!--/ Animation. -->
+  </div>
+</section>
 
+<hr style="width: 1000px; margin: 24px auto;">
 
-    <!-- <h3 class="title is-4">Download</h3>
-    <div class="content has-text-justified">
-      <p>All users can obtain and use this dataset and only after signing the
-        <a href="./static/resources/SUSTech1KAgreement.pdf" target="_blabk" style="color: #09f;">Agreement</a>
-        and sending it to the official contact email address (shencf2019@mail.sustech.edu.cn)</p>
-      <p>Before obtain the password for dataset, feel free to download first via link: (<a href="https://connecthkuhk-my.sharepoint.com/:f:/g/personal/noahshen_connect_hku_hk/EgDfZ-oO2hlHrtuctisJZYsBls_dKJcglBeETVGwSdLAug?e=AUcZcq" target="_blabk" style="color: #09f;">OneDrive</a>, <a href="https://pan.baidu.com/s/1Y5_50YD1zDZuRsFNEu4qlg?pwd=4zbf" target="_blabk" style="color: #09f;">BaiduYun</a>)</p>
-    </div> -->
-   
-    <div class="container is-max-desktop">
-  
-      <!--/ Matting. -->
-  
-      <!-- Animation. -->
-      <div class="columns is-centered">
-        <div class="column is-full-width">
-          <h2 class="title is-4" id="download-section">Download the Scoliosis1K Dataset</h2>
-          <div class="columns is-centered">
-  
-  
-      
-            <!-- Matting. -->
-            <div class="column">
-              <h2 class="title is-5">Step1: Download</h2>
-              <div class="columns is-centered">
-                <div class="column content">
-                  <p>
-                    Download when you are applying dataset via link: (<a href="https://emailncueducn-my.sharepoint.com/:f:/g/personal/6130116221_email_ncu_edu_cn/EnZWw_8PXwpPiDcifWnkgDkBfXDJp__TV3HQze-Jz7BQAA?e=yW9J9c" target="_blabk" style="color: #09f;">OneDrive</a>, 
-                    <a href="https://pan.baidu.com/s/1wVjr-N53oOfLkaC21FEubg?pwd=54iu" target="_blabk" style="color: #09f;">BaiduYun</a> code: 54iu). 
-                  </p>
-                  <!-- <img src="./static/images/interpolate_start.jpg"
-                  class="interpolation-image"
-                  alt="Interpolate start reference image." /> -->
-                  <!-- <video id="matting-video" controls playsinline height="100%">
-                    <source src="./static/videos/matting.mp4"
-                            type="video/mp4">
-                  </video> -->
-                </div>
-      
-              </div>
-            </div>
-            <!-- Visual Effects. -->
-            <div class="column">
-              <div class="content">
-                <h2 class="title is-5">Step2: Agreement</h2>
-                <p>
-                  Signing the <a href="./static/resources/Scoliosis1k_release_agreement.pdf" target="_blabk" style="color: #09f;">Agreement</a>
-                    and sending it to email (12331257@mail.sustech.edu.cn) with the subject “[Scoliosis1K Dataset Application]”. Then follow the <a href="https://github.com/ShiqiYu/OpenGait/tree/master/datasets/Scoliosis1K/README.md" target="_blabk" style="color: #09f;">instructions</a> to play the dataset.
-                </p>
-                <!-- <img src="./static/images/interpolate_start.jpg"
-                class="interpolation-image"
-                alt="Interpolate start reference image." /> -->
-              </div>
-            </div>
-            <!--/ Visual Effects. -->
-  
-          </div>        
-          <!--/ Interpolating. -->
-          <!--/ Interpolating. -->
-  
-  
-  
-        </div>
-      </div>
-   
-   
-    <hr>
-
-
-
-
-    <!-- Concurrent Work. -->
+<section>
+  <div class="container is-max-desktop">
     <div class="columns is-centered">
       <div class="column is-full-width">
-        <h2 class="title is-3">Method
-          <!-- <a class="icon-link" href="https://github.com/keunhong" class="external-link" disabled>
-          <i class="fab fa-github"></i>
-        </a> -->
-      </h2>
-
-      <div class="content has-text-justified">
-        
-          <!-- LiDAR modality and RGB modality are represented in blue and yellow, respectively. It shows that SUSTech1K dataset is scalable, multimodal, and diverse for the study of 3D gait recognition. CR, BG, UB, UF, NT, NM, OC, and CL denote attributes of Carrying, Bag, Umbrella, Uniform, Night, Occlusion, and Clothing, respectively.  -->
+        <h2 class="title is-3">Examples of Scoliosis1K</h2>
+        <div class="columns is-vcentered interpolation-panel">
+          <div class="column is-full-width has-text-centered">
+            <img src="./static/images/fig_dataset.png"
+                 class="interpolation-image"
+                 alt="Interpolate start reference image."/>
+          </div>
+        </div>
       </div>
-      <div class="content has-text-centered">
-        <div class="column is-full-width has-text-centered">
-          <img src="./static/images/fig_pipeline.png"
-               class="interpolation-image"
-               alt="Interpolate start reference image."/>
-          <!-- <p>Start Frame</p> -->
-          <br>
-          <p>                    
-            The participant is tracked throughout the video, excluding non-participant entities like clinicians. The participant's silhouette is then segmented, followed by scoliosis classification using ScoNet-MT based on gait analysis.
+    </div>
+  </div>
+</section>
+
+
+<hr style="width: 1000px; margin: 24px auto;">
+
+<section>
+  <div class="container is-max-desktop">
+    <div class="columns is-centered">
+      <div class="column is-full-width">
+        <h2 class="title is-3" id="download-section">How to get Scoliosis1K</h2>
+        <div class="content has-text-justified">
+          <p class="has-text-weight-semibold">
+            Please follow the steps below to access and use the dataset:
           </p>
         </div>
-
-      </div>
-
-
-        <!-- <div class="content has-text-justified">
-          <p>
-            There's a lot of excellent work that was introduced around the same time as ours.
-          </p>
-          <p>
-            <a href="https://arxiv.org/abs/2104.09125">Progressive Encoding for Neural Optimization</a> introduces an idea similar to our windowed position encoding for coarse-to-fine optimization.
-          </p>
-          <p>
-            <a href="https://www.albertpumarola.com/research/D-NeRF/index.html">D-NeRF</a> and <a href="https://gvv.mpi-inf.mpg.de/projects/nonrigid_nerf/">NR-NeRF</a>
-            both use deformation fields to model non-rigid scenes.
-          </p>
-          <p>
-            Some works model videos with a NeRF by directly modulating the density, such as <a href="https://video-nerf.github.io/">Video-NeRF</a>, <a href="https://www.cs.cornell.edu/~zl548/NSFF/">NSFF</a>, and <a href="https://neural-3d-video.github.io/">DyNeRF</a>
-          </p>
-          <p>
-            There are probably many more by the time you are reading this. Check out <a href="https://dellaert.github.io/NeRF/">Frank Dellart's survey on recent NeRF papers</a>, and <a href="https://github.com/yenchenlin/awesome-NeRF">Yen-Chen Lin's curated list of NeRF papers</a>.
-          </p>
-        </div> -->
+        
+        <div class="columns is-centered" style="margin-top: 1.5rem;">
+          <!-- Step 1: Download -->
+          <div class="column">
+            <div class="box">
+              <h3 class="title is-5">Step 1: Download</h3>
+              <div class="content">
+                <p>Choose a download link:</p>
+                <ul>
+                  <li><a href="https://emailncueducn-my.sharepoint.com/:f:/g/personal/6130116221_email_ncu_edu_cn/EnZWw_8PXwpPiDcifWnkgDkBfXDJp__TV3HQze-Jz7BQAA?e=yW9J9c" target="_blank" style="color: #09f;"><strong>OneDrive</strong></a></li>
+                  <li><a href="https://pan.baidu.com/s/1wVjr-N53oOfLkaC21FEubg?pwd=54iu" target="_blank" style="color: #09f;"><strong>BaiduYun</strong></a> (Password: <code>54iu</code>)</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        
+          <!-- Step 2: Agreement -->
+          <div class="column">
+            <div class="box">
+              <h3 class="title is-5">Step 2: Request Access</h3>
+              <div class="content">
+                <ol>
+                  <li>Download the <a href="./static/resources/Scoliosis1k_release_agreement.pdf" target="_blank" style="color: #09f;"><strong>Dataset Agreement</strong></a>.</li>
+                  <li>Sign it and email to <strong>12331257@mail.sustech.edu.cn</strong> with subject: <code>[Scoliosis1K Dataset Application]</code>.</li>
+                  <li>You will receive the decompression password upon approval.</li>
+                  <li>Then, follow the <a href="https://github.com/ShiqiYu/OpenGait/tree/master/datasets/Scoliosis1K/README.md" target="_blank" style="color: #09f;"><strong>usage guide</strong></a> to extract and use the dataset.</li>
+                </ol>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        
+        <div class="notification is-info is-light" style="margin-top: 1.5rem;">
+          <strong>Important:</strong> This dataset is released for <strong>ACADEMIC USE ONLY</strong>. Please ensure compliance with the agreement terms and conditions.
+        </div>
       </div>
     </div>
-    <!--/ Concurrent Work. -->
-
   </div>
+</section>
 
+<hr style="width: 1000px; margin: 24px auto;">
 
-<!-- <section class="section" id="BibTeX">
-  <div class="container is-max-desktop content">
-    <h2 class="title">LiDAR meets Gait</h2>
-
-    <div class="content has-text-justified">
-      <p>
-        As camera-based methods constrained by real-world factors, introducing LiDAR sensor for gait recognition
-        is a promising direction. However, the lack of large-scale LiDAR gait datasets hinders the development of
-        LiDAR-based gait recognition. 
-      </p>
-      <p>
-        To make gait recognition towards real-world applications, we would like to thanks all efforts made by previous researchers.
-        Besides, there are some excellent work that investigates LiDAR-based recognition around the same time as ours.
-      </p>
-
-      <p>
-        <a href="https://arxiv.org/abs/2211.12371">LiCamGait</a> introduces an dataset with camera and LiDAR modalities similar to our SUSTech1K. 
-        We believe that our dataset and LiCamGait dataset can complement each other and promote the development of LiDAR-based gait recognition.
-      </p>
-        <!-- LiDAR modality and RGB modality are represented in blue and yellow, respectively. It shows that SUSTech1K dataset is scalable, multimodal, and diverse for the study of 3D gait recognition. CR, BG, UB, UF, NT, NM, OC, and CL denote attributes of Carrying, Bag, Umbrella, Uniform, Night, Occlusion, and Clothing, respectively.  -->
+<section>
+  <div class="container is-max-desktop">
+    <div class="columns is-centered">
+      <div class="column is-full-width">
+        <h2 class="title is-3">Related Publications</h2>
+        <div class="content has-text-justified">
+          <p>All publications using "Scoliosis1K" dataset should cite the following papers:</p>
+          <ul>
+            <li>
+              <strong>Zirui Zhou<sup>†</sup>, Junhao Liang<sup>†</sup>, Zizhao Peng, Chao Fan, Fengwei An, Shiqi Yu<sup>*</sup></strong>, "Gait Patterns as Biomarkers: A Video-Based Approach for Classifying Scoliosis", International Conference on Medical Image Computing and Computer-Assisted Intervention (MICCAI), 2024.    <a href="https://arxiv.org/pdf/2407.05726" target="_blank" style="color: #09f;">[PDF]</a>    <a href="https://github.com/ShiqiYu/OpenGait/tree/master" target="_blank" style="color: #09f;">[Code]</a>
+            </li>
+            <li>
+              <strong>Zirui Zhou, Zizhao Peng, Dongyang Jin, Chao Fan, Fengwei An, Shiqi Yu<sup>*</sup></strong>, "Pose as Clinical Prior: Learning Dual Representations for Scoliosis Screening", International Conference on Medical Image Computing and Computer-Assisted Intervention (MICCAI), 2025. [PDF] <a href="https://github.com/ShiqiYu/OpenGait/tree/master" target="_blank" style="color: #09f;">[Code]</a>
+            </li>
+          </ul>
+          <p style="margin-top: 1rem; font-size: 0.9em; color: #666;">
+            <sup>*</sup> Corresponding author, <sup>†</sup> Equal contribution (co-first authors)
+          </p>
+        </div>
+      </div>
     </div>
-
   </div>
+</section>
 
 
-
-
-
-<hr>
-  <div class="container is-max-desktop content">
-    <h2 class="title">BibTeX</h2>
-    <pre><code>@inproceedings{zhou2024gait,
+<section>
+  <div class="container is-max-desktop">
+    <div class="columns is-centered">
+      <div class="column is-full-width">
+        <h2 class="title is-3">BibTeX</h2>
+        <div class="content">
+          <pre><code>@inproceedings{zhou2024gait,
       title={Gait Patterns as Biomarkers: A Video-Based Approach for Classifying Scoliosis},
       author={Zhou, Zirui and Liang, Junhao and Peng, Zizhao and Fan, Chao and An, Fengwei and Yu, Shiqi},
       booktitle={International Conference on Medical Image Computing and Computer-Assisted Intervention},
@@ -476,32 +292,25 @@
       year={2024},
       organization={Springer}
     }
+@inproceedings{zhou2025gait,
+  title={Pose as Clinical Prior: Learning Dual Representations for Scoliosis Screening},
+  author={Zhou, Zirui and Peng, Zizhao and Jin, Dongyang and Fan, Chao and An, Fengwei and Yu, Shiqi},
+  booktitle={International Conference on Medical Image Computing and Computer-Assisted Intervention},
+  year={2025},
+  organization={Springer}
+}
 </code></pre>
+        </div>
+      </div>
+    </div>
   </div>
 </section>
 
 <footer class="footer">
   <div class="container">
-    <div class="content has-text-centered">
-<!--       <a class="icon-link"
-         href="./static/videos/nerfies_paper.pdf">
-        <i class="fas fa-file-pdf"></i>
-      </a>
-      <a class="icon-link" href="https://github.com/keunhong" class="external-link" disabled>
-        <i class="fab fa-github"></i>
-      </a> -->
-      <script type="text/javascript" src="//rf.revolvermaps.com/0/0/6.js?i=5n2yl2rashu&amp;m=7&amp;c=e63100&amp;cr1=ffffff&amp;f=arial&amp;l=0&amp;bv=90&amp;lx=-420&amp;ly=420&amp;hi=20&amp;he=7&amp;hc=a8ddff&amp;rs=80" async="async"></script>
-      
-      <!-- <script type="text/javascript" src="//rf.revolvermaps.com/0/0/8.js?i=5p5ghfnxfxh&amp;m=0&amp;c=ff0000&amp;cr1=ffffff&amp;f=arial&amp;l=33" async="async"></script> -->
-<!-- <a href="https://www.revolvermaps.com/livestats/5d5zhqlyyot/"><img src="//rf.revolvermaps.com/h/m/a/0/ff0000/128/0/5d5zhqlyyot.png" width="256" height="128" alt="Map" style="border:0;"></a>    </div> -->
     <div class="columns is-centered">
       <div class="column is-8">
         <div class="content">
-          <!-- <p>
-            This website is licensed under a <a rel="license"
-                                                href="http://creativecommons.org/licenses/by-sa/4.0/">Creative
-            Commons Attribution-ShareAlike 4.0 International License</a>.
-          </p> -->
           <p>
             We made this site with the code from <a
               href="https://github.com/nerfies/nerfies.github.io">nerfies</a>.
